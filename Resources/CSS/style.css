@@ -1,0 +1,179 @@
+
+/*GENERAL SETTINGS FOR THE ENTIRE PAGE*/
+html{
+    font-size: 16px;
+    color: #707070;
+}
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background-color: #211919
+}
+
+.cell {
+    position: relative;
+    width: 80px; 
+    height: 46.19px;
+    background-color: #211919;
+    margin: 23.09px 0;
+    border-left: solid 3px #707070;
+    border-right: solid 3px #707070;
+    margin: 0
+  }
+  
+  .cell:before,
+  .cell:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 56.57px;
+    height: 56.57px;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background-color: inherit;
+    left: 8.7157px;
+  }
+  
+  .cell:before {
+    top: -28.2843px;
+    border-top: solid 4.2426px #707070;
+    border-right: solid 4.2426px #707070;
+  }
+  
+  .cell:after {
+    bottom: -28.2843px;
+    border-bottom: solid 4.2426px #707070;
+    border-left: solid 4.2426px #707070;
+  }
+  
+/*PLACES THE PARTY SECTIONS TO THE BOTTOM RIGHT AND LEFT OF SCREEN*/
+.party{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+}
+
+.hero{
+    bottom: 0;
+}
+.enemy{
+    bottom: 0;
+    right:0;
+}
+
+/*STYLES THE PARTY MEMBER TABS*/
+.member{
+    position: relative;
+    width: 25rem;
+    background-color: #000000;
+    margin-bottom: 1.5rem;
+}
+.member:before{
+    content: '';
+    position: absolute;
+    width: 0;
+}
+
+
+.hero.member{
+    border: 2px solid #1A0038;
+}
+.hero.member:before{
+    bottom: 0;
+    right: 0;
+    border-left: 60px solid black;
+    border-bottom:  60px solid #3D0085;
+}
+
+.enemy.member{
+    border: 2px solid #2D0000;
+}
+.enemy.member:before{
+    bottom: 0;
+    left: 0;
+    border-right: 60px solid black;
+    border-bottom: 60px solid #870505
+}
+/*
+.member:hover:before{
+    cursor: pointer;
+}
+*/
+
+/*GENERAL INFO ABOUT THE CHARACTER*/
+.info{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3rem;
+    padding-bottom: 0;
+}
+
+.info h2{
+    font-size: 2rem;
+    margin-left: 0.7rem
+}
+
+.info p{
+    position: relative;
+    top: 0.25rem;
+    font-size: 1.2rem;
+    padding: 0;
+    margin-left: 0.5rem;
+}
+
+/*ADJUST POSITIONING OF ENEMY TABS*/
+.enemy .info,
+.enemy .statistics{
+    margin-left: 4.5rem;
+}
+
+/*SPECIFIC STATS ABOUT THE CHARACTER*/
+.statistics{
+    display: flex;
+    margin-top: 0;
+}
+
+.stat{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0.1rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.stat p{
+    margin: 0 0 0.5rem 0;
+}
+
+.stat h3{
+    margin: 0.5rem 0;
+}
+
+/*BUTTON TO ADD A NEW PARTY MEMBER*/
+button{
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    color: #D6D6D6;
+}
+
+#newHero{
+    background-color: #3D0085;
+    border-color: #1A0038;
+}
+
+#newEnemy{
+    background-color: #870505;
+    border-color: #2D0000;
+    align-self: flex-end;
+}
+
