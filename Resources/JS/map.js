@@ -1,25 +1,24 @@
 class Cell {
     constructor(){
         this.occupied = false;
-        this.structure = $(<p></p>).addClass("cell");
+        this.structure = $("<p></p>").addClass("cell");
         this.width = 80;
         this.height = 46.19;
     }
 
-    get occupied(){ return this.occupied; }
-    get width(){ return this.width; }
-    get height(){ return this.height; }
-}
+    get isOccupied(){ return this.occupied; }
+    set isOccupied(condition){ this.occupied = 0; }
+    get cellWidth(){ return this.width; }
+    get cellHeight(){ return this.height; }
+}//END CELL CLASS
 
 class Map{
-    constructor(w, h){
-        this.width = w;
-        this.height = h;
+    constructor(width, height){
+        this.width = width;
+        this.height = height;
+        this.cellArray = [];
     }
 
-    create(){
-        
-    }
-
-    get width(){ return this.width; }
-}
+    get mapWidth(){ return this.width; }
+    get array(){ return this.cellArray; }
+}//END MAP CLASS
