@@ -11,6 +11,28 @@ $(document).ready(function(){
         value = 0;
     })// END MOUSELEAVE EVENT
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //METHOD DEFINITIONS
+
+    //TAKES THE VALUE OF A SINGLE STAT, AND DETERMINES THE MODIFIER FOR IT.
     const getMod = function(val){
         let mod = -20
         switch(true){
