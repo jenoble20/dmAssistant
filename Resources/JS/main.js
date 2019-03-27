@@ -3,7 +3,10 @@ import {Cell} from './cell.js';
 $(document).ready(function(){
     const cellWidth = 80;
     const cellHeight = 46.19;
+    const ROWS = 18;
+    const COLUMNS = 14;
     let value = 0;
+
 
     /**ALLOWS THE USER TO HOVER
      * OVER EACH STATISTIC, DISPLAYING
@@ -25,24 +28,32 @@ $(document).ready(function(){
      * CONSISTS OF A GRID OF CELLS THAT
      * ARE DEFINED IN THE 'cell.js' FILE.
      */
-
-    const makeMap = function(){
-        let x=0;
-        let y=0;
-        let limit = 0;
-        console.log($("main").width());
-        while(limit<$("main").width()){
+   const makeMap = function(){
+    let map = [];
+    for(let y=0; y<ROWS; y++){
+        let rowArray = [];
+        $("#table").append(`<div class="row ${y}"></div>`);
+        for(let x=0; x<COLUMNS; x++){
             let newCell = new Cell(x,y,cellWidth,cellHeight);
-            console.log(x);
-            $("main").append(newCell.structure);
-            x++;
-            limit+=cellWidth;
+            rowArray.push(newCell);
+            $(`.row.${y}`).append(newCell.structure);
         }
-    }//end makeMap()
-    /**/
-    makeMap()
+        map.push(rowArray);
+        if(y%2!=0){
+            $(`.row.${y}`).css("left", 43)
+        }
+        if(y%2==0){
+            $(`.row.${y}`).css("margin", "20px 0")
+        }
+    }
+    return map;
+}//end makeMap()
+/**/
 
-    
+let battleMap = makeMap();
+console.log("BATTLEMAP:")
+console.log(battleMap);
+
 
 
 

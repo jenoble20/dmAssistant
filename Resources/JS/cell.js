@@ -15,7 +15,7 @@ export class Cell {
         this.height = 46.19;
         this.occupied = false;
         this.inRange = false;
-        this.structure = "<div class='cell'></div>";
+        this.structure = `<div class='cell ${this.xCoord} ${this.yCoord}'></div>`;
     }
 
     get isOccupied(){ return this.occupied; }
@@ -24,22 +24,3 @@ export class Cell {
     get cellHeight(){ return this.height; }
 }//end Cell class
 /**/
-
-
-
-
-
-
-
-
-
-// export class Map{
-//     constructor(){
-//         this.width = $(".main").width;
-//         this.height = $(".main").height;
-//         this.cellArray = [];
-//     }
-//     get mapWidth(){ return this.width; }
-//     get array(){ return this.cellArray; }
-// }//END MAP CLASS
-
