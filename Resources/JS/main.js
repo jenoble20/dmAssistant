@@ -16,11 +16,11 @@ $(document).ready(function(){
         value = $(this).children(".value").text();
         value = parseInt(value, 10);
         $(this).children(".value").text(getMod(value));
-    })//end mouseenter event
+    });//end mouseenter event
     $(".stat").mouseleave(function(){
         $(this).children(".value").text(value);
         value = 0;
-    })//end mouseleave event
+    });//end mouseleave event
     /**/
 
 
@@ -51,10 +51,23 @@ $(document).ready(function(){
 /**/
 
 let battleMap = makeMap();
-console.log("BATTLEMAP:")
-console.log(battleMap);
 
 
+/**ADDS A NEW MEMBER TO THE PARTY, UP TO EIGHT MEMBERS.
+ * UPON ADDING A NEW MEMBER, THE USER MUST PROVIDE
+ * ALL OF THE STATS AND RELEVENT INFORMATION FOR A
+ * BATTLE. 
+ * 
+ * NOTE THAT THERE ARE TWO BUTTON CLICK EVENTS, ONE
+ * FOR ADDING A FRIENDLY MEMBER AND ONE FOR ADDING
+ * AN ENEMY. THIS IS JUST TO AVOID HAVING TO CHECK
+ * AT RUNTIME WHICH BUTTON WAS SELECTED.
+ */
+
+ //Adding a friendly party member
+$("newHero").click(function(){
+    
+});//end button click event
 
 
 

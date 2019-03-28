@@ -6,15 +6,21 @@ html{
     background-color: #211919;
 }
 
+body{
+    background-color: red;
+}
+
 main{
     height: 100%
 }
 
+
+/*BATTLE MAP SECTION*/
 #table{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 1440px;
+    width:95%;
     height: 100%;
     margin: auto;
     padding: 3rem;
@@ -59,21 +65,28 @@ main{
     border-left: solid 4.2426px #707070;
   }
   
+
 /*PLACES THE PARTY SECTIONS TO THE BOTTOM RIGHT AND LEFT OF SCREEN*/
 .party{
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: 50;
+    z-index: 20;
+}
+
+.hero,
+.enemy{
+    bottom: 0;
 }
 
 .hero{
-    bottom: 0;
+    left: 0;
 }
+
 .enemy{
-    bottom: 0;
     right:0;
 }
+
 
 /*STYLES THE PARTY MEMBER TABS*/
 .member{
@@ -82,16 +95,17 @@ main{
     background-color: #000000;
     margin-bottom: 1.5rem;
 }
+
 .member:before{
     content: '';
     position: absolute;
     width: 0;
 }
 
-
 .hero.member{
     border: 2px solid #1A0038;
 }
+
 .hero.member:before{
     bottom: 0;
     right: 0;
@@ -102,17 +116,18 @@ main{
 .enemy.member{
     border: 2px solid #2D0000;
 }
+
 .enemy.member:before{
     bottom: 0;
     left: 0;
     border-right: 60px solid black;
     border-bottom: 60px solid #870505
 }
-/*
+
 .member:hover:before{
     cursor: pointer;
 }
-*/
+
 
 /*GENERAL INFO ABOUT THE CHARACTER*/
 .info{
@@ -139,7 +154,7 @@ main{
 /*ADJUST POSITIONING OF ENEMY TABS*/
 .enemy .info,
 .enemy .statistics{
-    margin-left: 4.5rem;
+    margin-left: 5.5rem;
 }
 
 /*SPECIFIC STATS ABOUT THE CHARACTER*/
@@ -173,6 +188,10 @@ button{
     color: #D6D6D6;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 #newHero{
     background-color: #3D0085;
     border-color: #1A0038;
@@ -184,3 +203,30 @@ button{
     align-self: flex-end;
 }
 
+
+/*****************/
+
+
+/*CHARACTER SHEET SECTION*/
+
+.sheet{
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30rem;
+    height: 100%;
+    background-color: blue;
+    z-index: 30;
+}
+
+.general{
+    display: flex;
+}
+
+.general h3{
+    margin-left: 1rem;
+    vertical-align: bottom;
+    line-height: 3rem;
+}
